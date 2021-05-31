@@ -32,5 +32,5 @@ lanedet pcdfile
 
 pcdfile is the point cloud input file in pcd format.
 
-The output of lane points detectd will be written to pcdfile.output. 
+The output of detected lane points will be written to pcdfile.output. 
 
