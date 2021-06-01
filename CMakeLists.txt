@@ -23,42 +23,44 @@ add_library( lanedetection ${CPP_SOURCES})
 target_include_directories(lanedetection PUBLIC include/ src/)
 target_link_libraries( lanedetection ${PCL_LIBRARIES})
 
-# Test #########################################
-# test plane model fitting
-add_executable (test_pcfitplane test/test_pcfitplane.cpp)
-target_include_directories(test_pcfitplane PUBLIC include/)
-target_link_libraries (test_pcfitplane lanedetection ${PCL_LIBRARIES})
-
-# test DBSCAN
-add_executable (test_dbscan test/test_dbscan.cpp)
-target_include_directories(test_dbscan PUBLIC include/)
-target_link_libraries (test_dbscan lanedetection ${PCL_LIBRARIES})
-
-# test pcshow
-add_executable (test_pcshow test/test_pcshow.cpp)
-target_include_directories(test_pcshow PUBLIC include/)
-target_link_libraries (test_pcshow lanedetection ${PCL_LIBRARIES})
-
-# test lane detection
-add_executable (test_lanedetection test/test_lanedetection.cpp)
-target_include_directories(test_lanedetection PUBLIC include/)
-target_link_libraries (test_lanedetection lanedetection ${PCL_LIBRARIES})
-
-# test utils
-add_executable (test_utils test/test_utils.cpp)
-target_include_directories(test_utils PUBLIC include/)
-target_link_libraries (test_utils lanedetection ${PCL_LIBRARIES})
-
-# fit plane model
-#add_executable (pcfitplane src/pcfitplane.cpp)
-#target_link_libraries (pcfitplane ${PCL_LIBRARIES})
-
-#add_executable (dbscan src/dbscan.cpp)
-#target_link_libraries (dbscan ${PCL_LIBRARIES})
+################# Compile the applications ###########################
 
 # Application lanedet
 add_executable (lanedet examples/lanedet.cpp)
 target_include_directories(lanedet PUBLIC include/)
 target_link_libraries (lanedet lanedetection ${PCL_LIBRARIES})
+
+# pointcloudview
+add_executable (ptcviewer examples/ptcviewer.cpp)
+target_include_directories(ptcviewer PUBLIC include/)
+target_link_libraries (ptcviewer lanedetection ${PCL_LIBRARIES})
+
+################# Compile the tests ###################################
+
+# test plane model fitting
+#add_executable (test_pcfitplane test/test_pcfitplane.cpp)
+#target_include_directories(test_pcfitplane PUBLIC include/)
+#target_link_libraries (test_pcfitplane lanedetection ${PCL_LIBRARIES})
+
+# test DBSCAN
+#add_executable (test_dbscan test/test_dbscan.cpp)
+#target_include_directories(test_dbscan PUBLIC include/)
+#target_link_libraries (test_dbscan lanedetection ${PCL_LIBRARIES})
+
+# test lane detection
+#add_executable (test_lanedetection test/test_lanedetection.cpp)
+#target_include_directories(test_lanedetection PUBLIC include/)
+#target_link_libraries (test_lanedetection lanedetection ${PCL_LIBRARIES})
+
+# test utils
+#add_executable (test_utils test/test_utils.cpp)
+#target_include_directories(test_utils PUBLIC include/)
+#target_link_libraries (test_utils lanedetection ${PCL_LIBRARIES})
+
+# test readpar
+#add_executable (test_readpar test/test_readpar.cpp)
+#target_include_directories(test_readpar PUBLIC include/)
+#target_link_libraries (test_readpar lanedetection ${PCL_LIBRARIES})
+
 
 

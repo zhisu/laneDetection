@@ -14,18 +14,31 @@
 #include "pcfitplane.h"
 #include "dbscan.h"
 #include "utils.h"
+#include "lanepar.h"
 
 void
 findLanesInPointcloud(string pcdfile);
 
-std::vector<int>
-findLanesByConfig(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, float INTENSITY_THRESHOLD, float eps);
+void
+findLanesInPointcloud(string pcdfile, string parfile);
+
+//std::vector<int>
+//findLanesByConfig(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, float INTENSITY_THRESHOLD, float eps);
 
 std::vector<int>
-findLanes(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud);
+findLanesByConfig(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, float INTENSITY_THRESHOLD, float eps, LanePar=LanePar());
+
+//std::vector<int>
+//findLanes(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud);
 
 std::vector<int>
-findLanesByROI(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, vector<float> roi, string="x");
+findLanes(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, LanePar=LanePar());
+
+//std::vector<int>
+//findLanesByROI(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, vector<float> roi, string="x");
+
+std::vector<int>
+findLanesByROI(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, vector<float> roi, string="x", LanePar=LanePar());
 
 int evalLaneCluster(pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, std::vector<int> &cluster, float laneW);
 
