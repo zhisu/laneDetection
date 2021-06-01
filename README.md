@@ -20,9 +20,9 @@ The compilation has been tested on Ubuntu 18.04 with CMake 3.10.2 and PCL 1.8.1.
 Step 1: Download the source code or clone it from git repository.
 
 Step 2: In command line, type and run the following  
-cd lanedetection; 
-make build;
-cmake ../;
+cd laneDetection  
+make build  
+cmake ../  
 make
 
 
