@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
-project(planar_segmentation)
+project(lane_detection)
 
 find_package(PCL 1.8 REQUIRED)
 
