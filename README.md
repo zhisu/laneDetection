@@ -20,7 +20,7 @@ Step 1: Download the source code or clone it from git repository.
 Step 2: In command line, type and run the following  
 cd laneDetection  
 make build  
-cd build
+cd build  
 cmake ../  
 make
 
